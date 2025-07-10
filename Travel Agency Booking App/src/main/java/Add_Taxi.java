@@ -29,7 +29,7 @@ public class Add_Taxi extends javax.swing.JInternalFrame {
             Connection con;
             PreparedStatement pre;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_project?useSSL=false&allowPublicKeyRetrieval=true", "root", "Akshay@2255");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_project?useSSL=false&allowPublicKeyRetrieval=true", "your server name", "your password");
             pre = con.prepareStatement("SELECT Taxi_ID FROM taxi ORDER BY taxi_ID DESC LIMIT 1");
             ResultSet rs=pre.executeQuery();
             
@@ -287,7 +287,7 @@ public class Add_Taxi extends javax.swing.JInternalFrame {
             Connection con;        
             PreparedStatement pre;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_project","root","Akshay@2255");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_project","your server name","your password");
             pre=con.prepareStatement("insert into taxi(Taxi_ID,Taxi_Name,Departure,Arrival,Time,Date,Duration,Total_Seats,Ticket_Fare)values(?,?,?,?,?,?,?,?,?)");
             pre.setString(1, TaxiID);
             pre.setString(2, TaxiName);
